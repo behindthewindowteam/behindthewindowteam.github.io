@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - [Your App Name]</title>
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #24292e;
+            background-color: #f6f8fa;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            color: #0366d6;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .last-updated {
+            color: #586069;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        h2 {
+            color: #24292e;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaecef;
+        }
+        
+        h3 {
+            color: #444d56;
+            margin: 20px 0 10px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .contact-info {
+            background: #f6f8fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #0366d6;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eaecef;
+            color: #586069;
+            font-size: 0.9em;
+        }
+        
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .github-corner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;
+            z-index: 1000;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- GitHub Corner Banner -->
+    <a href="https://github.com/yourusername/your-repo" class="github-corner" aria-label="View source on GitHub">
+        <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+        </svg>
+    </a>
+
+    <div class="container">
+        <header>
+            <h1>Privacy Policy <span class="badge">For Google Play</span></h1>
+            <p class="last-updated">Last Updated: <span id="current-date">January 22, 2024</span></p>
+        </header>
+
+        <section id="introduction">
+            <p>This Privacy Policy describes how <strong>[Your App Name]</strong> ("we," "our," or "the app") handles your information. We are committed to protecting your privacy and being transparent about our practices.</p>
+        </section>
+
+        <section id="information-collection">
+            <h2>📱 Information Collection and Use</h2>
+            <p>Our app <strong>does not collect, store, or share any personal information</strong> from users. We do not require registration, and we do not track or collect any data about you or your device.</p>
+            
+            <h3>Data Collected Locally</h3>
+            <p>If our app saves any settings or preferences, these are stored <strong>locally on your device</strong> and are not transmitted to us or any third parties.</p>
+        </section>
+
+        <section id="third-party">
+            <h2>🔗 Third-Party Services</h2>
+            <p>Our app may include third-party services that have their own privacy policies:</p>
+            
+            <h3>1. Google Play Services</h3>
+            <p>This app is distributed via Google Play Store. Google may collect:</p>
+            <ul>
+                <li>Basic installation and uninstallation statistics</li>
+                <li>Crash reports (if you opt-in)</li>
+                <li>Performance data</li>
+            </ul>
+            <p>We have no control over data collected by Google. Please review <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+            
+            <h3>2. Other Services</h3>
+            <p><em>List any additional services your app uses:</em></p>
+            <ul>
+                <li><strong>Firebase Analytics</strong> (if used) - <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Policy</a></li>
+                <li><strong>AdMob/Google Ads</strong> (if used) - <a href="https://policies.google.com/technologies/ads" target="_blank">Advertising Policies</a></li>
+                <li><em>Add other SDKs here...</em></li>
+            </ul>
+        </section>
+
+        <section id="security">
+            <h2>🔒 Data Security</h2>
+            <p>Since we do not collect or store any personal data, there is minimal risk of data breach from our app. Any data processing is handled locally on your device.</p>
+        </section>
+
+        <section id="children">
+            <h2>👶 Children's Privacy</h2>
+            <p>Our app is suitable for all ages. We do not knowingly collect personal information from children under 13.</p>
+        </section>
+
+        <section id="changes">
+            <h2>📝 Changes to This Policy</h2>
+            <p>We may update this Privacy Policy periodically. We will notify users of any changes by:</p>
+            <ul>
+                <li>Updating the "Last Updated" date at the top of this policy</li>
+                <li>Posting a notice in the Google Play Store listing (if significant changes occur)</li>
+            </ul>
+            <p>You are advised to review this Privacy Policy periodically for any changes.</p>
+        </section>
+
+        <section id="contact" class="contact-info">
+            <h2>📧 Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, you can contact us through:</p>
+            <ul>
+                <li><strong>GitHub Repository:</strong> <a href="https://github.com/yourusername/your-repo" target="_blank">github.com/yourusername/your-repo</a></li>
+                <li><strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a></li>
+                <li><strong>Google Play Developer Page:</strong> <a href="https://play.google.com/store/apps/dev?id=YOUR_DEV_ID" target="_blank">Our Play Store Listing</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>This privacy policy is hosted on GitHub Pages.</p>
+        <p>© <span id="current-year">2024</span> [Your App Name]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Auto-update dates
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Format: Month Day, Year
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const currentDate = new Date().toLocaleDateString('en-US', options);
+            document.getElementById('current-date').textContent = currentDate;
+        });
+    </script>
+</body>
+</html>
