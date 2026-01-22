@@ -5,86 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Behind The Window Team</title>
     <style>
-        /* Same styling as before */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
         .container {
+            max-width: 800px;
+            margin: 40px auto;
             background: white;
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
+        
         h1 {
             color: #2c3e50;
             border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
         }
-        .app-selector {
+        
+        h2 {
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        ul {
+            margin: 15px 0 20px 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .header-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .highlight {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
+            border-left: 4px solid #3498db;
             margin: 20px 0;
+        }
+        
+        .contact-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .nav-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        .nav-links a:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🔒 Privacy Policy</h1>
-        <p><strong>Behind The Window Team</strong></p>
-        <p class="last-updated">Last Updated: <span id="date"></span></p>
-        
-        <div class="app-selector">
-            <p><strong>Select an app to view its specific privacy policy:</strong></p>
-            <select id="appSelector" onchange="showAppPolicy()">
-                <option value="general">General Privacy Policy (All Apps)</option>
-                <option value="app1">Weather Pro</option>
-                <option value="app2">Fitness Tracker</option>
-                <option value="app3">Expense Manager</option>
-            </select>
+        <div class="header-box">
+            <h1 style="color: white; border-bottom: none;">🔒 Privacy Policy</h1>
+            <p><strong>Developer:</strong> Behind The Window Team</p>
+            <p><strong>Last Updated:</strong> <span id="currentDate">January 22, 2026</span></p>
+            <p><strong>Applicable To:</strong> All Android applications published by Behind The Window Team</p>
         </div>
         
-        <div id="policyContent">
-            <!-- Content loads here based on selection -->
+        <div class="highlight">
+            <h2>📋 Our Privacy Commitment</h2>
+            <p>We develop Android applications with privacy as a fundamental principle. This privacy policy applies to <strong>all apps</strong> published by Behind The Window Team on Google Play Store.</p>
         </div>
         
-        <p style="margin-top: 40px; text-align: center;">
-            <a href="index.html">← Back to Apps Hub</a> | 
-            <a href="terms.html">View Terms of Service →</a>
-        </p>
+        <h2>📱 Information Collection</h2>
+        <p><strong>We do not collect any personal information.</strong> Our apps are designed to operate without gathering personal data:</p>
+        <ul>
+            <li><strong>No Registration:</strong> You can use our apps without creating accounts</li>
+            <li><strong>No Personal Data:</strong> We don't collect names, emails, or contact information</li>
+            <li><strong>No Tracking:</strong> We don't track your activities or behavior</li>
+            <li><strong>No Analytics:</strong> We don't use analytics that collect personal data</li>
+        </ul>
+        
+        <h2>💾 Data Storage & Security</h2>
+        <p>Any data generated while using our apps is:</p>
+        <ul>
+            <li><strong>Stored locally</strong> on your device only</li>
+            <li><strong>Never transmitted</strong> to external servers</li>
+            <li><strong>Automatically deleted</strong> when you uninstall the app</li>
+            <li><strong>Protected</strong> by Android's built-in security features</li>
+        </ul>
+        
+        <h2>🔐 App Permissions</h2>
+        <p>If our apps request permissions, they are used exclusively for app functionality:</p>
+        <ul>
+            <li><strong>Internet Access:</strong> For downloading updates or essential data</li>
+            <li><strong>Storage:</strong> To save files locally on your device</li>
+            <li><strong>Camera/Microphone:</strong> Only if required for specific features</li>
+            <li><strong>Location:</strong> Only when explicitly needed for app functionality</li>
+        </ul>
+        <p>You can revoke permissions anytime in your device settings.</p>
+        
+        <h2>🔗 Third-Party Services</h2>
+        <p>Our apps may use:</p>
+        <ul>
+            <li><strong>Google Play Services:</strong> Required for app distribution. Google's privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+            <li><strong>Advertising Networks:</strong> If ads are shown, they comply with Google's advertising policies</li>
+            <li><strong>Payment Processors:</strong> For in-app purchases through Google Play</li>
+        </ul>
+        
+        <h2>👶 Children's Privacy</h2>
+        <p>Our apps are suitable for users of all ages. We do not knowingly collect information from children under 13.</p>
+        
+        <h2>📝 Policy Updates</h2>
+        <p>We may update this privacy policy. The "Last Updated" date will reflect any changes.</p>
+        
+        <div class="contact-box">
+            <h2>📬 Contact Information</h2>
+            <p>For questions about this privacy policy:</p>
+            <ul>
+                <li><strong>GitHub Organization:</strong> <a href="https://github.com/behindthewindowteam" target="_blank">github.com/behindthewindowteam</a></li>
+                <li><strong>Email:</strong> <a href="mailto:privacy@behindthewindow.team">privacy@behindthewindow.team</a></li>
+                <li><strong>Google Play Developer:</strong> <a href="https://play.google.com/store/apps/dev?id=YOUR_DEV_ID" target="_blank">Behind The Window Team Profile</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-links">
+            <a href="https://behindthewindowteam.github.io">🏠 Home</a>
+            <a href="terms.html">📜 Terms of Service</a>
+        </div>
     </div>
     
     <script>
-        // Set date
-        document.getElementById('date').textContent = new Date().toLocaleDateString();
-        
-        // Load default policy
-        showAppPolicy();
-        
-        function showAppPolicy() {
-            const appId = document.getElementById('appSelector').value;
-            let content = '';
-            
-            if (appId === 'general') {
-                content = `
-                    <h2>General Privacy Policy</h2>
-                    <p>This privacy policy applies to all apps developed by Behind The Window Team...</p>
-                    <!-- Add full privacy policy content -->
-                `;
-            } else if (appId === 'app1') {
-                content = `
-                    <h2>Weather Pro Privacy Policy</h2>
-                    <p>Specific privacy policy for Weather Pro app...</p>
-                `;
-            }
-            // Add more app policies...
-            
-            document.getElementById('policyContent').innerHTML = content;
-        }
+        // Update date automatically
+        const date = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = date.toLocaleDateString('en-US', options);
     </script>
 </body>
 </html>
