@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Behind The Window Team - Privacy Policy</title>
-    <link rel="icon" href="https://github.githubassets.com/favicon.ico">
+    <title>Behind The Window Team - Apps Privacy Center</title>
     <style>
         :root {
             --primary: #6e5494;
             --secondary: #4078c0;
-            --light: #fafbfc;
+            --accent: #bd2c00;
+            --light: #f6f8fa;
             --dark: #24292e;
         }
         
@@ -29,48 +29,52 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 40px auto;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
             overflow: hidden;
         }
         
         header {
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: white;
-            padding: 50px 40px;
+            padding: 60px 40px;
             text-align: center;
         }
         
         h1 {
-            font-size: 2.8em;
+            font-size: 3em;
             margin-bottom: 15px;
-            font-weight: 600;
+            font-weight: 700;
         }
         
         .subtitle {
-            font-size: 1.3em;
+            font-size: 1.4em;
             opacity: 0.95;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
-        .last-updated {
+        .tagline {
             background: rgba(255,255,255,0.15);
             display: inline-block;
-            padding: 10px 25px;
-            border-radius: 25px;
-            font-size: 0.95em;
-            margin-top: 15px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1em;
+            margin-top: 20px;
         }
         
-        .content {
+        .main-content {
             padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
         }
         
-        @media (max-width: 768px) {
-            .content {
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
                 padding: 30px 20px;
             }
             
@@ -83,62 +87,134 @@
             }
         }
         
-        section {
-            margin: 40px 0;
-            padding: 30px;
-            background: #f6f8fa;
-            border-radius: 12px;
-            border-left: 5px solid var(--primary);
-            transition: transform 0.3s ease;
+        /* Apps Grid */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
         }
         
-        section:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(110, 84, 148, 0.1);
+        .app-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 2px solid #e1e4e8;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
         
-        h2 {
-            color: var(--dark);
-            margin-bottom: 20px;
-            font-size: 1.8em;
+        .app-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(110, 84, 148, 0.15);
+        }
+        
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .app-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 18px;
             display: flex;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .app-name {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        .app-desc {
+            color: #586069;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .app-links {
+            display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
         
-        h3 {
-            color: #2f363d;
-            margin: 25px 0 15px 0;
-            font-size: 1.3em;
+        .privacy-link, .terms-link {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
         }
         
-        p {
-            margin-bottom: 15px;
-            color: #444d56;
+        .privacy-link {
+            background: #f0f7ff;
+            color: var(--secondary);
+            border: 1px solid #c8e1ff;
         }
         
-        ul {
-            margin: 15px 0 20px 30px;
+        .privacy-link:hover {
+            background: var(--secondary);
+            color: white;
         }
         
-        li {
-            margin-bottom: 10px;
-            padding-left: 5px;
+        .terms-link {
+            background: #f8f0ff;
+            color: var(--primary);
+            border: 1px solid #e6d4ff;
+        }
+        
+        .terms-link:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: #f6f8fa;
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid #e1e4e8;
+        }
+        
+        .quick-info {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         
         .contact-card {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             color: white;
-            padding: 40px;
+            padding: 30px;
             border-radius: 15px;
-            margin: 50px 0 30px 0;
+            margin-top: 30px;
         }
         
         .contact-card a {
             color: white;
             text-decoration: none;
             border-bottom: 2px solid rgba(255,255,255,0.3);
-            transition: border-color 0.3s;
         }
         
         .contact-card a:hover {
@@ -164,281 +240,427 @@
             box-shadow: 0 8px 20px rgba(36, 41, 46, 0.3);
         }
         
-        .app-badge {
-            display: inline-block;
-            background: #e1e4e8;
-            color: var(--dark);
-            padding: 8px 16px;
-            border-radius: 20px;
-            margin: 5px 10px 5px 0;
-            font-size: 0.9em;
-            border: 2px solid var(--primary);
-        }
-        
-        .highlight {
-            background: linear-gradient(120deg, rgba(110, 84, 148, 0.1) 0%, rgba(64, 120, 192, 0.1) 100%);
-            padding: 3px 6px;
-            border-radius: 4px;
-            font-weight: 500;
-        }
-        
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px;
             color: #6a737d;
             border-top: 1px solid #eaecef;
             background: #fafbfc;
+        }
+        
+        .url-info {
+            background: #f0f7ff;
+            border: 2px dashed #c8e1ff;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .url-display {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1.1em;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+        
+        .instructions {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🔒 Behind The Window Team</h1>
-            <p class="subtitle">Privacy Policy for Our Android Applications</p>
-            <p class="last-updated">📅 Last Updated: <span id="currentDate">Loading...</span></p>
+            <h1>🔐 Behind The Window Team</h1>
+            <p class="subtitle">Privacy & Terms Center for All Our Android Applications</p>
+            <p class="tagline">One Link for All Apps | Easy to Update | Always Accessible</p>
         </header>
 
-        <div class="content">
-            <section>
-                <h2>🛡️ Our Privacy Commitment</h2>
-                <p>At <span class="highlight">Behind The Window Team</span>, we develop Android applications with a strong commitment to user privacy. We believe your data belongs to you, and we're transparent about how we handle it.</p>
+        <div class="main-content">
+            <div>
+                <h2 style="color: var(--dark); margin-bottom: 30px; font-size: 2em;">📱 Our Applications</h2>
+                <p style="margin-bottom: 30px; color: #586069;">Click on any app to view its privacy policy and terms of service. All policies are accessible through a single URL with hash parameters.</p>
                 
-                <h3>Core Principles:</h3>
-                <ul>
-                    <li><strong>No Unnecessary Data Collection:</strong> We only collect data essential for app functionality</li>
-                    <li><strong>Local First:</strong> Your data stays on your device whenever possible</li>
-                    <li><strong>Transparency:</strong> Clear disclosure of all data practices</li>
-                    <li><strong>Security:</strong> Implementation of industry-standard security measures</li>
-                    <li><strong>User Control:</strong> You remain in control of your data</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>📊 Information We Don't Collect</h2>
-                <p>We <strong>do not collect</strong> the following personal information:</p>
-                <ul>
-                    <li>Personal identification (name, email, address)</li>
-                    <li>Contact lists or address books</li>
-                    <li>Location data (unless explicitly required by app functionality)</li>
-                    <li>Photos, videos, or media files</li>
-                    <li>Payment or financial information</li>
-                    <li>Sensitive device information</li>
-                </ul>
+                <div class="apps-grid" id="appsContainer">
+                    <!-- Apps will be dynamically loaded -->
+                </div>
                 
-                <h3>What We May Access:</h3>
-                <p>Some apps may request permissions for specific features:</p>
-                <ul>
-                    <li><span class="highlight">Storage Access:</span> For saving/loading files locally</li>
-                    <li><span class="highlight">Internet Permission:</span> For app updates or cloud features</li>
-                    <li><span class="highlight">Camera Access:</span> Only for apps with camera functionality</li>
-                </ul>
-                <p>Each permission is clearly explained during installation and can be revoked at any time.</p>
-            </section>
-
-            <section>
-                <h2>🔗 Third-Party Services</h2>
+                <div class="url-info">
+                    <h3 style="color: var(--secondary); margin-bottom: 15px;">🔗 Universal Privacy Policy URL</h3>
+                    <p>Use this single URL for all apps in Google Play Console:</p>
+                    <div class="url-display" id="universalUrl">
+                        https://behindthewindowteam.github.io/#privacy
+                    </div>
+                    <p><strong>How it works:</strong> Add <code>?app=APP_ID</code> or use hash parameters like <code>#app=APP_ID</code> to show specific app's policy.</p>
+                </div>
                 
-                <h3>1. Google Play Services</h3>
-                <p>Our apps are distributed through the Google Play Store. Google may collect:</p>
-                <ul>
-                    <li>Installation and uninstallation statistics</li>
-                    <li>Anonymous crash reports (when you opt-in)</li>
-                    <li>Aggregate usage metrics</li>
-                    <li>Device information for compatibility purposes</li>
-                </ul>
-                <p>This data collection is governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>. We have no control over Google's data practices.</p>
-
-                <h3>2. Firebase Services (If Used)</h3>
-                <p>Some apps may use Google Firebase for:</p>
-                <ul>
-                    <li>Anonymous analytics to improve app performance</li>
-                    <li>Cloud messaging for notifications (with user consent)</li>
-                    <li>Remote configuration for feature management</li>
-                </ul>
-                <p>All Firebase data is anonymized and governed by <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policies</a>.</p>
-
-                <h3>3. Advertising Services</h3>
-                <p>If an app contains ads, we use:</p>
-                <ul>
-                    <li>Non-personalized ads by default</li>
-                    <li>GDPR and CCPA compliant ad networks</li>
-                    <li>Transparent ad labeling</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>💾 Data Storage & Security</h2>
-                
-                <h3>Local Storage</h3>
-                <p>Most app data is stored locally on your device in:</p>
-                <ul>
-                    <li>App-specific internal storage (sandboxed)</li>
-                    <li>Encrypted SharedPreferences for sensitive data</li>
-                    <li>SQLite databases with proper access controls</li>
-                </ul>
-                
-                <h3>Cloud Storage (If Applicable)</h3>
-                <p>For apps with cloud backup features:</p>
-                <ul>
-                    <li>Data is encrypted in transit (HTTPS/TLS)</li>
-                    <li>Encryption at rest on secure servers</li>
-                    <li>User authentication required for access</li>
-                    <li>Data deletion upon account removal</li>
-                </ul>
-                
-                <h3>Security Measures</h3>
-                <ul>
-                    <li>Regular security audits and updates</li>
-                    <li>Code obfuscation and anti-tampering measures</li>
-                    <li>Secure API communication</li>
-                    <li>Timely security patch implementation</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>👶 Children's Privacy</h2>
-                <p>Our applications are designed to be family-friendly:</p>
-                <ul>
-                    <li>We comply with COPPA (Children's Online Privacy Protection Act)</li>
-                    <li>No personal information collected from children under 13</li>
-                    <li>Parental consent mechanisms where required</li>
-                    <li>Age-appropriate content and advertising</li>
-                </ul>
-                <p>If you believe we have inadvertently collected information from a child under 13, please contact us immediately for deletion.</p>
-            </section>
-
-            <div class="contact-card">
-                <h2 style="color: white;">📬 Contact & Support</h2>
-                <p>We welcome your questions and feedback about our privacy practices:</p>
-                
-                <h3 style="color: rgba(255,255,255,0.95); margin-top: 25px;">Primary Contact Methods:</h3>
-                <p><strong>🌐 GitHub Organization:</strong><br>
-                <a href="https://github.com/behindthewindowteam" target="_blank">github.com/behindthewindowteam</a></p>
-                
-                <p><strong>📧 Email Address:</strong><br>
-                <a href="mailto:privacy@behindthewindow.team">privacy@behindthewindow.team</a></p>
-                
-                <p><strong>📱 Google Play Developer Page:</strong><br>
-                <a href="https://play.google.com/store/apps/dev?id=YOUR_DEVELOPER_ID_HERE" target="_blank">Behind The Window Team on Google Play</a></p>
-                
-                <p><strong>⏰ Response Time:</strong> We typically respond within 2-3 business days.</p>
-                
-                <a href="https://github.com/behindthewindowteam" class="github-badge" target="_blank">
-                    <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                    </svg>
-                    Visit Our GitHub Organization
-                </a>
+                <div class="instructions">
+                    <h3 style="color: #d35400; margin-bottom: 15px;">📝 For Google Play Console:</h3>
+                    <p>Use this URL for <strong>ALL</strong> your apps' privacy policies:</p>
+                    <p style="background: white; padding: 12px; border-radius: 6px; font-family: monospace; margin: 10px 0;">
+                        https://behindthewindowteam.github.io/#privacy
+                    </p>
+                    <p>Users will automatically see the correct policy based on which app they're viewing from.</p>
+                </div>
             </div>
-
-            <section>
-                <h2>📝 Policy Updates</h2>
-                <p>We may update this privacy policy to reflect:</p>
-                <ul>
-                    <li>Changes in app functionality</li>
-                    <li>New legal requirements</li>
-                    <li>Industry best practices</li>
-                    <li>User feedback and requests</li>
-                </ul>
+            
+            <div class="sidebar">
+                <div class="quick-info">
+                    <h3 style="color: var(--dark); margin-bottom: 20px;">ℹ️ How to Use</h3>
+                    <p><strong>For Developers:</strong> Use the single URL above for all apps.</p>
+                    <p><strong>For Users:</strong> Select your app from the list to view its specific policy.</p>
+                    <p><strong>Direct Links:</strong> Each app has unique URLs for privacy and terms.</p>
+                </div>
                 
-                <h3>Notification of Changes:</h3>
-                <ul>
-                    <li>Updated "Last Updated" date on this page</li>
-                    <li>Release notes in Google Play Store updates</li>
-                    <li>In-app notifications for significant changes</li>
-                    <li>Optional email notification for major revisions</li>
-                </ul>
+                <div class="quick-info">
+                    <h3 style="color: var(--dark); margin-bottom: 15px;">🎯 URL Parameters</h3>
+                    <p>You can link directly to specific content:</p>
+                    <ul style="margin-left: 20px; color: #586069;">
+                        <li><code>#privacy&app=APP_ID</code> - Privacy for specific app</li>
+                        <li><code>#terms&app=APP_ID</code> - Terms for specific app</li>
+                        <li><code>#contact</code> - Contact information</li>
+                    </ul>
+                </div>
                 
-                <p>We encourage you to review this policy periodically. Continued use of our apps after changes constitutes acceptance of the updated policy.</p>
-            </section>
-
-            <section>
-                <h2>⚖️ Your Rights & Choices</h2>
-                <p>Depending on your location, you may have certain rights regarding your data:</p>
-                
-                <h3>For All Users:</h3>
-                <ul>
-                    <li><strong>Access:</strong> Request information about data we hold</li>
-                    <li><strong>Deletion:</strong> Request deletion of your data</li>
-                    <li><strong>Correction:</strong> Request correction of inaccurate data</li>
-                    <li><strong>Opt-out:</strong> Opt out of non-essential data collection</li>
-                </ul>
-                
-                <h3>Regional Protections:</h3>
-                <ul>
-                    <li><strong>GDPR (EU):</strong> Full rights under General Data Protection Regulation</li>
-                    <li><strong>CCPA (California):</strong> Rights under California Consumer Privacy Act</li>
-                    <li><strong>LGPD (Brazil):</strong> Rights under Lei Geral de Proteção de Dados</li>
-                    <li><strong>Other Jurisdictions:</strong> Compliance with local privacy laws</li>
-                </ul>
-                
-                <p>To exercise your rights, contact us using the information above.</p>
-            </section>
+                <div class="contact-card">
+                    <h3 style="color: white; margin-bottom: 20px;">📬 Contact Us</h3>
+                    <p><strong>GitHub:</strong><br>
+                    <a href="https://github.com/behindthewindowteam" target="_blank">github.com/behindthewindowteam</a></p>
+                    
+                    <p><strong>Email:</strong><br>
+                    <a href="mailto:privacy@behindthewindow.team">privacy@behindthewindow.team</a></p>
+                    
+                    <p><strong>Google Play:</strong><br>
+                    <a href="https://play.google.com/store/apps/dev?id=YOUR_ID" target="_blank">Our Developer Page</a></p>
+                    
+                    <a href="https://github.com/behindthewindowteam" class="github-badge" target="_blank">
+                        <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        Visit Our GitHub
+                    </a>
+                </div>
+            </div>
         </div>
 
         <footer>
-            <p>This privacy policy is effective as of <span id="effectiveDate"></span></p>
             <p>© <span id="currentYear"></span> Behind The Window Team. All rights reserved.</p>
-            <p>This document is hosted on GitHub Pages and publicly available for transparency.</p>
+            <p>This privacy center is hosted on GitHub Pages. Last updated: <span id="currentDate"></span></p>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #95a5a6;">
+                All app policies accessible via: <strong>https://behindthewindowteam.github.io</strong>
+            </p>
         </footer>
     </div>
 
+    <!-- Modal for showing policies -->
+    <div id="policyModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; padding: 20px;">
+        <div style="background: white; border-radius: 15px; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 40px; position: relative;">
+            <button id="closeModal" style="position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">×</button>
+            <div id="modalContent">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const now = new Date();
-            
-            // Format: Month Day, Year
-            const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('currentDate').textContent = 
-                now.toLocaleDateString('en-US', dateOptions);
-            
-            // Set effective date (90 days ago for initial policy)
-            const effectiveDate = new Date(now);
-            effectiveDate.setDate(effectiveDate.getDate() - 90);
-            document.getElementById('effectiveDate').textContent = 
-                effectiveDate.toLocaleDateString('en-US', dateOptions);
-            
-            // Set current year
-            document.getElementById('currentYear').textContent = now.getFullYear();
-            
-            // Dynamic background based on time of day
-            const hour = now.getHours();
-            let gradient;
-            
-            if (hour >= 5 && hour < 12) {
-                // Morning
-                gradient = 'linear-gradient(135deg, #6e5494 0%, #4078c0 30%, #6ab7ff 100%)';
-            } else if (hour >= 12 && hour < 18) {
-                // Afternoon
-                gradient = 'linear-gradient(135deg, #4078c0 0%, #6e5494 50%, #4078c0 100%)';
-            } else if (hour >= 18 && hour < 22) {
-                // Evening
-                gradient = 'linear-gradient(135deg, #2c3e50 0%, #6e5494 50%, #4078c0 100%)';
-            } else {
-                // Night
-                gradient = 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)';
+        // Sample apps data - REPLACE WITH YOUR ACTUAL APPS
+        const apps = [
+            {
+                id: 'weather_pro',
+                name: 'Weather Pro',
+                description: 'Accurate weather forecasts with real-time updates',
+                icon: '🌤️',
+                packageName: 'com.behindthewindowteam.weatherpro',
+                privacy: 'Weather Pro collects location data only when the app is in use to provide accurate local forecasts.',
+                terms: 'By using Weather Pro, you agree to our fair use policy and acknowledge that weather data comes from third-party providers.',
+                features: ['Location-based forecasts', 'Severe weather alerts', '10-day predictions']
+            },
+            {
+                id: 'fitness_tracker',
+                name: 'Fitness Tracker',
+                description: 'Track workouts and monitor fitness progress',
+                icon: '🏃',
+                packageName: 'com.behindthewindowteam.fitnesstracker',
+                privacy: 'Fitness Tracker uses device sensors to track activity. All data is stored locally on your device.',
+                terms: 'The app is for informational purposes only and should not replace professional medical advice.',
+                features: ['Step counting', 'Workout logging', 'Progress charts']
+            },
+            {
+                id: 'expense_manager',
+                name: 'Expense Manager',
+                description: 'Simple personal finance and budget tracking',
+                icon: '💰',
+                packageName: 'com.behindthewindowteam.expensemanager',
+                privacy: 'Expense Manager does not collect any financial data. All information stays on your device.',
+                terms: 'We are not responsible for financial decisions made based on the app\'s calculations.',
+                features: ['Budget planning', 'Expense categorization', 'Report generation']
+            },
+            {
+                id: 'notes_app',
+                name: 'Secure Notes',
+                description: 'Encrypted note-taking with cloud sync',
+                icon: '📝',
+                packageName: 'com.behindthewindowteam.securenotes',
+                privacy: 'Notes are encrypted end-to-end. We cannot read your notes even if stored on our servers.',
+                terms: 'You retain all rights to your content. We provide storage as a service only.',
+                features: ['End-to-end encryption', 'Cloud backup', 'Biometric lock']
+            },
+            {
+                id: 'habit_builder',
+                name: 'Habit Builder',
+                description: 'Build positive habits with daily reminders',
+                icon: '✅',
+                packageName: 'com.behindthewindowteam.habitbuilder',
+                privacy: 'Habit Builder only stores your habit data locally. No personal information is collected.',
+                terms: 'The app provides motivational tools but success depends on user commitment.',
+                features: ['Habit tracking', 'Reminders', 'Streak counting']
+            },
+            {
+                id: 'sleep_tracker',
+                name: 'Sleep Tracker',
+                description: 'Monitor sleep patterns and improve sleep quality',
+                icon: '😴',
+                packageName: 'com.behindthewindowteam.sleeptracker',
+                privacy: 'Sleep Tracker uses motion detection during sleep hours. No audio or video is recorded.',
+                terms: 'Sleep analysis is based on algorithms and should not replace medical diagnosis.',
+                features: ['Sleep analysis', 'Smart alarms', 'Sleep quality scores']
             }
-            
-            document.body.style.background = gradient;
-            
-            // Add smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+        ];
+
+        // Current app and policy type from URL
+        let currentAppId = null;
+        let currentPolicyType = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year and date
+            const now = new Date();
+            document.getElementById('currentYear').textContent = now.getFullYear();
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Render apps grid
+            renderAppsGrid();
+
+            // Handle URL parameters
+            handleUrlParameters();
+
+            // Setup modal close button
+            document.getElementById('closeModal').addEventListener('click', closeModal);
+
+            // Close modal on background click
+            document.getElementById('policyModal').addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+
+            // Update universal URL
+            updateUniversalUrl();
+        });
+
+        function renderAppsGrid() {
+            const container = document.getElementById('appsContainer');
+            container.innerHTML = '';
+
+            apps.forEach(app => {
+                const appCard = document.createElement('div');
+                appCard.className = 'app-card';
+                appCard.innerHTML = `
+                    <div class="app-icon">${app.icon}</div>
+                    <div class="app-name">${app.name}</div>
+                    <div class="app-desc">${app.description}</div>
+                    <div class="app-links">
+                        <a href="#privacy&app=${app.id}" class="privacy-link" data-app="${app.id}" data-type="privacy">
+                            Privacy Policy
+                        </a>
+                        <a href="#terms&app=${app.id}" class="terms-link" data-app="${app.id}" data-type="terms">
+                            Terms of Service
+                        </a>
+                    </div>
+                `;
+                container.appendChild(appCard);
+            });
+
+            // Add click handlers to all links
+            document.querySelectorAll('.privacy-link, .terms-link').forEach(link => {
+                link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 20,
-                            behavior: 'smooth'
-                        });
-                    }
+                    const appId = this.getAttribute('data-app');
+                    const type = this.getAttribute('data-type');
+                    showPolicy(appId, type);
+                    updateUrl(appId, type);
                 });
             });
-        });
+        }
+
+        function handleUrlParameters() {
+            const hash = window.location.hash.substring(1);
+            if (!hash) return;
+
+            const params = new URLSearchParams(hash);
+            const appId = params.get('app');
+            const type = hash.includes('privacy') ? 'privacy' : 
+                         hash.includes('terms') ? 'terms' : null;
+
+            if (appId && type) {
+                showPolicy(appId, type);
+            } else if (type === 'privacy' && !appId) {
+                // Show general privacy policy
+                showGeneralPolicy();
+            }
+        }
+
+        function showPolicy(appId, type) {
+            const app = apps.find(a => a.id === appId);
+            if (!app) {
+                showGeneralPolicy();
+                return;
+            }
+
+            currentAppId = appId;
+            currentPolicyType = type;
+
+            const modal = document.getElementById('policyModal');
+            const content = document.getElementById('modalContent');
+
+            const title = type === 'privacy' ? 'Privacy Policy' : 'Terms of Service';
+            const icon = type === 'privacy' ? '🔒' : '📜';
+
+            let policyContent = '';
+            if (type === 'privacy') {
+                policyContent = `
+                    <h2 style="color: var(--secondary); margin-bottom: 20px;">${icon} ${app.name} - Privacy Policy</h2>
+                    <div style="background: #f0f7ff; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
+                        <p><strong>Package Name:</strong> ${app.packageName}</p>
+                        <p><strong>Last Updated:</strong> ${new Date().toLocaleDateString()}</p>
+                    </div>
+                    
+                    <h3 style="color: var(--dark); margin: 25px 0 15px 0;">Data Collection</h3>
+                    <p>${app.privacy}</p>
+                    
+                    <h3 style="color: var(--dark); margin: 25px 0 15px 0;">Permissions</h3>
+                    <p>This app may request the following permissions:</p>
+                    <ul style="margin-left: 25px; margin-bottom: 25px;">
+                        <li>Internet access for updates and features</li>
+                        <li>Storage access for saving data locally</li>
+                        ${app.features.includes('Location-based forecasts') ? '<li>Location (only when app is in use)</li>' : ''}
+                    </ul>
+                    
+                    <h3 style="color: var(--dark); margin: 25px 0 15px 0;">Data Security</h3>
+                    <p>All user data is stored locally on your device. We do not transmit personal information to our servers.</p>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 30px;">
+                        <p><strong>For Google Play:</strong> This is the official privacy policy for ${app.name}.</p>
+                        <p><strong>URL to use:</strong> https://behindthewindowteam.github.io/#privacy&app=${app.id}</p>
+                    </div>
+                `;
+            } else {
+                policyContent = `
+                    <h2 style="color: var(--primary); margin-bottom: 20px;">${icon} ${app.name} - Terms of Service</h2>
+                    <div style="background: #f8f0ff; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
+                        <p><strong>Package Name:</strong> ${app.packageName}</p>
+                        <p><strong>Effective Date:</strong> ${new Date().toLocaleDateString()}</p>
+                    </div>
+                    
+                    <h3 style="color: var(--dark); margin: 25px 0 15px 0;">Usage Terms</h3>
+                    <p>${app.terms}</p>
+                    
+                    <h3 style="color: var(--dark); margin: 25px 0 15px 0;">User Responsibilities</h3>
+                    <ul style="margin-left: 25px; margin-bottom: 25px;">
+                        <li>Use the app in compliance with all applicable laws</li>
+                        <li>Do not attempt to reverse engineer or modify the app</li>
+                        <li>Keep your device secure to protect your data</li>
+                    </ul>
+                    
+                    <h3 style="color: var(--dark); margin: 25px 0 15px 0;">Limitations</h3>
+                    <p>This app is provided "as is" without warranties. We are not liable for any damages resulting from app use.</p>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 30px;">
+                        <p><strong>For Google Play:</strong> These are the official terms for ${app.name}.</p>
+                        <p><strong>URL to use:</strong> https://behindthewindowteam.github.io/#terms&app=${app.id}</p>
+                    </div>
+                `;
+            }
+
+            content.innerHTML = policyContent;
+            modal.style.display = 'flex';
+        }
+
+        function showGeneralPolicy() {
+            const modal = document.getElementById('policyModal');
+            const content = document.getElementById('modalContent');
+
+            content.innerHTML = `
+                <h2 style="color: var(--secondary); margin-bottom: 20px;">🔒 Behind The Window Team - General Privacy Policy</h2>
+                <div style="background: #f0f7ff; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
+                    <p><strong>Last Updated:</strong> ${new Date().toLocaleDateString()}</p>
+                    <p><strong>For All Applications:</strong> This is our general privacy policy that applies to all apps unless overridden by app-specific policies.</p>
+                </div>
+                
+                <h3 style="color: var(--dark); margin: 25px 0 15px 0;">Our Commitment</h3>
+                <p>Behind The Window Team is committed to protecting your privacy. We develop apps that respect your data and provide transparency about our practices.</p>
+                
+                <h3 style="color: var(--dark); margin: 25px 0 15px 0;">Data Collection Principles</h3>
+                <ul style="margin-left: 25px; margin-bottom: 25px;">
+                    <li><strong>Minimal Collection:</strong> We only collect data necessary for app functionality</li>
+                    <li><strong>Local Storage:</strong> User data is stored locally whenever possible</li>
+                    <li><strong>Transparency:</strong> Clear disclosure of all data practices</li>
+                    <li><strong>Security:</strong> Implementation of security best practices</li>
+                    <li><strong>User Control:</strong> You remain in control of your data</li>
+                </ul>
+                
+                <h3 style="color: var(--dark); margin: 25px 0 15px 0;">Third-Party Services</h3>
+                <p>Our apps may use:</p>
+                <ul style="margin-left: 25px; margin-bottom: 25px;">
+                    <li><strong>Google Play Services:</strong> For app distribution and updates</li>
+                    <li><strong>Firebase:</strong> For anonymous analytics and crash reporting</li>
+                    <li><strong>Ad Networks:</strong> For non-personalized advertising</li>
+                </ul>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 30px;">
+                    <h4 style="color: var(--dark); margin-bottom: 15px;">📱 App-Specific Policies</h4>
+                    <p>Each app may have specific policies. Select an app from the main page to view its detailed privacy policy and terms of service.</p>
+                    <p><strong>Universal URL for Google Play:</strong> https://behindthewindowteam.github.io/#privacy</p>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('policyModal').style.display = 'none';
+            currentAppId = null;
+            currentPolicyType = null;
+            window.location.hash = '';
+        }
+
+        function updateUrl(appId, type) {
+            window.location.hash = `${type}&app=${appId}`;
+        }
+
+        function updateUniversalUrl() {
+            const baseUrl = window.location.origin + window.location.pathname;
+            document.getElementById('universalUrl').textContent = baseUrl + '#privacy';
+        }
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleUrlParameters);
+
+        // Copy URL function (optional)
+        function copyUniversalUrl() {
+            const url = document.getElementById('universalUrl').textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('URL copied to clipboard!');
+            });
+        }
     </script>
 </body>
 </html>
