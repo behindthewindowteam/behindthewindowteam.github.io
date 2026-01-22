@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind The Window Team - Privacy Policy</title>
+    <link rel="icon" href="https://github.githubassets.com/favicon.ico">
+    <style>
+        :root {
+            --primary: #6e5494;
+            --secondary: #4078c0;
+            --light: #fafbfc;
+            --dark: #24292e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+        
+        .last-updated {
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            margin-top: 15px;
+        }
+        
+        .content {
+            padding: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px 20px;
+            }
+            
+            header {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+        
+        section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f6f8fa;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(110, 84, 148, 0.1);
+        }
+        
+        h2 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h3 {
+            color: #2f363d;
+            margin: 25px 0 15px 0;
+            font-size: 1.3em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #444d56;
+        }
+        
+        ul {
+            margin: 15px 0 20px 30px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0 30px 0;
+        }
+        
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            transition: border-color 0.3s;
+        }
+        
+        .contact-card a:hover {
+            border-color: white;
+        }
+        
+        .github-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--dark);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .github-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(36, 41, 46, 0.3);
+        }
+        
+        .app-badge {
+            display: inline-block;
+            background: #e1e4e8;
+            color: var(--dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 5px 10px 5px 0;
+            font-size: 0.9em;
+            border: 2px solid var(--primary);
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(110, 84, 148, 0.1) 0%, rgba(64, 120, 192, 0.1) 100%);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6a737d;
+            border-top: 1px solid #eaecef;
+            background: #fafbfc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔒 Behind The Window Team</h1>
+            <p class="subtitle">Privacy Policy for Our Android Applications</p>
+            <p class="last-updated">📅 Last Updated: <span id="currentDate">Loading...</span></p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>🛡️ Our Privacy Commitment</h2>
+                <p>At <span class="highlight">Behind The Window Team</span>, we develop Android applications with a strong commitment to user privacy. We believe your data belongs to you, and we're transparent about how we handle it.</p>
+                
+                <h3>Core Principles:</h3>
+                <ul>
+                    <li><strong>No Unnecessary Data Collection:</strong> We only collect data essential for app functionality</li>
+                    <li><strong>Local First:</strong> Your data stays on your device whenever possible</li>
+                    <li><strong>Transparency:</strong> Clear disclosure of all data practices</li>
+                    <li><strong>Security:</strong> Implementation of industry-standard security measures</li>
+                    <li><strong>User Control:</strong> You remain in control of your data</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>📊 Information We Don't Collect</h2>
+                <p>We <strong>do not collect</strong> the following personal information:</p>
+                <ul>
+                    <li>Personal identification (name, email, address)</li>
+                    <li>Contact lists or address books</li>
+                    <li>Location data (unless explicitly required by app functionality)</li>
+                    <li>Photos, videos, or media files</li>
+                    <li>Payment or financial information</li>
+                    <li>Sensitive device information</li>
+                </ul>
+                
+                <h3>What We May Access:</h3>
+                <p>Some apps may request permissions for specific features:</p>
+                <ul>
+                    <li><span class="highlight">Storage Access:</span> For saving/loading files locally</li>
+                    <li><span class="highlight">Internet Permission:</span> For app updates or cloud features</li>
+                    <li><span class="highlight">Camera Access:</span> Only for apps with camera functionality</li>
+                </ul>
+                <p>Each permission is clearly explained during installation and can be revoked at any time.</p>
+            </section>
+
+            <section>
+                <h2>🔗 Third-Party Services</h2>
+                
+                <h3>1. Google Play Services</h3>
+                <p>Our apps are distributed through the Google Play Store. Google may collect:</p>
+                <ul>
+                    <li>Installation and uninstallation statistics</li>
+                    <li>Anonymous crash reports (when you opt-in)</li>
+                    <li>Aggregate usage metrics</li>
+                    <li>Device information for compatibility purposes</li>
+                </ul>
+                <p>This data collection is governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>. We have no control over Google's data practices.</p>
+
+                <h3>2. Firebase Services (If Used)</h3>
+                <p>Some apps may use Google Firebase for:</p>
+                <ul>
+                    <li>Anonymous analytics to improve app performance</li>
+                    <li>Cloud messaging for notifications (with user consent)</li>
+                    <li>Remote configuration for feature management</li>
+                </ul>
+                <p>All Firebase data is anonymized and governed by <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policies</a>.</p>
+
+                <h3>3. Advertising Services</h3>
+                <p>If an app contains ads, we use:</p>
+                <ul>
+                    <li>Non-personalized ads by default</li>
+                    <li>GDPR and CCPA compliant ad networks</li>
+                    <li>Transparent ad labeling</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>💾 Data Storage & Security</h2>
+                
+                <h3>Local Storage</h3>
+                <p>Most app data is stored locally on your device in:</p>
+                <ul>
+                    <li>App-specific internal storage (sandboxed)</li>
+                    <li>Encrypted SharedPreferences for sensitive data</li>
+                    <li>SQLite databases with proper access controls</li>
+                </ul>
+                
+                <h3>Cloud Storage (If Applicable)</h3>
+                <p>For apps with cloud backup features:</p>
+                <ul>
+                    <li>Data is encrypted in transit (HTTPS/TLS)</li>
+                    <li>Encryption at rest on secure servers</li>
+                    <li>User authentication required for access</li>
+                    <li>Data deletion upon account removal</li>
+                </ul>
+                
+                <h3>Security Measures</h3>
+                <ul>
+                    <li>Regular security audits and updates</li>
+                    <li>Code obfuscation and anti-tampering measures</li>
+                    <li>Secure API communication</li>
+                    <li>Timely security patch implementation</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>👶 Children's Privacy</h2>
+                <p>Our applications are designed to be family-friendly:</p>
+                <ul>
+                    <li>We comply with COPPA (Children's Online Privacy Protection Act)</li>
+                    <li>No personal information collected from children under 13</li>
+                    <li>Parental consent mechanisms where required</li>
+                    <li>Age-appropriate content and advertising</li>
+                </ul>
+                <p>If you believe we have inadvertently collected information from a child under 13, please contact us immediately for deletion.</p>
+            </section>
+
+            <div class="contact-card">
+                <h2 style="color: white;">📬 Contact & Support</h2>
+                <p>We welcome your questions and feedback about our privacy practices:</p>
+                
+                <h3 style="color: rgba(255,255,255,0.95); margin-top: 25px;">Primary Contact Methods:</h3>
+                <p><strong>🌐 GitHub Organization:</strong><br>
+                <a href="https://github.com/behindthewindowteam" target="_blank">github.com/behindthewindowteam</a></p>
+                
+                <p><strong>📧 Email Address:</strong><br>
+                <a href="mailto:privacy@behindthewindow.team">privacy@behindthewindow.team</a></p>
+                
+                <p><strong>📱 Google Play Developer Page:</strong><br>
+                <a href="https://play.google.com/store/apps/dev?id=YOUR_DEVELOPER_ID_HERE" target="_blank">Behind The Window Team on Google Play</a></p>
+                
+                <p><strong>⏰ Response Time:</strong> We typically respond within 2-3 business days.</p>
+                
+                <a href="https://github.com/behindthewindowteam" class="github-badge" target="_blank">
+                    <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    Visit Our GitHub Organization
+                </a>
+            </div>
+
+            <section>
+                <h2>📝 Policy Updates</h2>
+                <p>We may update this privacy policy to reflect:</p>
+                <ul>
+                    <li>Changes in app functionality</li>
+                    <li>New legal requirements</li>
+                    <li>Industry best practices</li>
+                    <li>User feedback and requests</li>
+                </ul>
+                
+                <h3>Notification of Changes:</h3>
+                <ul>
+                    <li>Updated "Last Updated" date on this page</li>
+                    <li>Release notes in Google Play Store updates</li>
+                    <li>In-app notifications for significant changes</li>
+                    <li>Optional email notification for major revisions</li>
+                </ul>
+                
+                <p>We encourage you to review this policy periodically. Continued use of our apps after changes constitutes acceptance of the updated policy.</p>
+            </section>
+
+            <section>
+                <h2>⚖️ Your Rights & Choices</h2>
+                <p>Depending on your location, you may have certain rights regarding your data:</p>
+                
+                <h3>For All Users:</h3>
+                <ul>
+                    <li><strong>Access:</strong> Request information about data we hold</li>
+                    <li><strong>Deletion:</strong> Request deletion of your data</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate data</li>
+                    <li><strong>Opt-out:</strong> Opt out of non-essential data collection</li>
+                </ul>
+                
+                <h3>Regional Protections:</h3>
+                <ul>
+                    <li><strong>GDPR (EU):</strong> Full rights under General Data Protection Regulation</li>
+                    <li><strong>CCPA (California):</strong> Rights under California Consumer Privacy Act</li>
+                    <li><strong>LGPD (Brazil):</strong> Rights under Lei Geral de Proteção de Dados</li>
+                    <li><strong>Other Jurisdictions:</strong> Compliance with local privacy laws</li>
+                </ul>
+                
+                <p>To exercise your rights, contact us using the information above.</p>
+            </section>
+        </div>
+
+        <footer>
+            <p>This privacy policy is effective as of <span id="effectiveDate"></span></p>
+            <p>© <span id="currentYear"></span> Behind The Window Team. All rights reserved.</p>
+            <p>This document is hosted on GitHub Pages and publicly available for transparency.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            
+            // Format: Month Day, Year
+            const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = 
+                now.toLocaleDateString('en-US', dateOptions);
+            
+            // Set effective date (90 days ago for initial policy)
+            const effectiveDate = new Date(now);
+            effectiveDate.setDate(effectiveDate.getDate() - 90);
+            document.getElementById('effectiveDate').textContent = 
+                effectiveDate.toLocaleDateString('en-US', dateOptions);
+            
+            // Set current year
+            document.getElementById('currentYear').textContent = now.getFullYear();
+            
+            // Dynamic background based on time of day
+            const hour = now.getHours();
+            let gradient;
+            
+            if (hour >= 5 && hour < 12) {
+                // Morning
+                gradient = 'linear-gradient(135deg, #6e5494 0%, #4078c0 30%, #6ab7ff 100%)';
+            } else if (hour >= 12 && hour < 18) {
+                // Afternoon
+                gradient = 'linear-gradient(135deg, #4078c0 0%, #6e5494 50%, #4078c0 100%)';
+            } else if (hour >= 18 && hour < 22) {
+                // Evening
+                gradient = 'linear-gradient(135deg, #2c3e50 0%, #6e5494 50%, #4078c0 100%)';
+            } else {
+                // Night
+                gradient = 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)';
+            }
+            
+            document.body.style.background = gradient;
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
